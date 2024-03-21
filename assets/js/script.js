@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Open the URL after 2 seconds
             setTimeout(() => {
                 window.location.href = scheme_url;
-            }, 2000);
+            }, 500);
         }
     }
 
