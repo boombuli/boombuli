@@ -35,9 +35,10 @@ document.addEventListener("DOMContentLoaded", () => {
         navigator.clipboard.writeText(text)
         .then(() => {
             messageElement.style.display = "block";
+            openApp(scheme_url);
             setTimeout(() => {
                 messageElement.style.display = "none";
-                openApp(scheme_url);
+                
             }, 3000);
         })
         .catch((err) => {
