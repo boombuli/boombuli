@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const RECEIVER = document.getElementById("boombuli-receiver");
 
     
-    const tbc_account = "tbc://";
-    const bog_account = "bogmBank://";
+    const tbc_scheme_url = "tbc://";
+    const bog_scheme_url = "bogmBank://";
     
-    const tbc_scheme_url = "GE27TB7924345064400003";
-    const bog_scheme_url = "GE68BG0000000533443714";
+    const tbc_account = "GE27TB7924345064400003";
+    const bog_account = "GE68BG0000000533443714";
 
     const service_fee = "Service Fee";
     const receiver = "Tsypysheva Aleksandra";
