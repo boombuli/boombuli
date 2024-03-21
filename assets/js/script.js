@@ -11,17 +11,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const RECEIVER = document.getElementById("boombuli-receiver");
 
     
-    const tbc_account = "GE27TB7924345064400003";
-    const bog_account = "GE68BG0000000533443714";
+    const tbc_account = "tbc://";
+    const bog_account = "bogmBank://";
+    
+    const tbc_scheme_url = "GE27TB7924345064400003";
+    const bog_scheme_url = "GE68BG0000000533443714";
+
     const service_fee = "Service Fee";
     const receiver = "Tsypysheva Aleksandra";
     
-    const copyTextToClipboard = (text) => {
+
+    
+    const openApp = (scheme_url) => {
+        if(scheme_url){
+            // Open the URL after 2 seconds
+            setTimeout(() => {
+                window.location.href = scheme_url;
+            }, 2000);
+        }
+    }
+
+    const copyTextToClipboard = (text, scheme_url) => {
         navigator.clipboard.writeText(text)
         .then(() => {
             messageElement.style.display = "block";
             setTimeout(() => {
                 messageElement.style.display = "none";
+                openApp(scheme_url);
             }, 3000);
         })
         .catch((err) => {
@@ -31,12 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     TBC_BUTTON.addEventListener("click", () => {
         ALERT_INNER_TEXT.innerText = "Счет скопирован!";
-        copyTextToClipboard(tbc_account);
+        copyTextToClipboard(tbc_account, tbc_scheme_url);
     });
 
     BOG_BUTTON.addEventListener("click", () => {
         ALERT_INNER_TEXT.innerText = "Счет скопирован!";
-        copyTextToClipboard(bog_account);
+        copyTextToClipboard(bog_account, bog_scheme_url);
     });
 
     SERVICE_FEE.addEventListener("click", () => {
