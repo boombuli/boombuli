@@ -20,13 +20,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const service_fee = "Service Fee";
     const receiver = "Tsypysheva Aleksandra";
     
-
+    const isInstagramBrowser = navigator.userAgent.includes("Instagram");
     
     const openApp = (scheme_url) => {
         if(scheme_url){
             // Open the URL after 2 seconds
             setTimeout(() => {
-                window.location.href = scheme_url;
+                if(!isInstagramBrowser){
+                    window.location.href = scheme_url;
+                }
             }, 500);
         }
     }
